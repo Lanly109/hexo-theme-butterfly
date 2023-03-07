@@ -1,7 +1,9 @@
 #sidebar
+  
   #menu-mask
   #sidebar-menus
     .avatar-img.is-center
+      script(async data-pjax src=`/js/WaterRipple.js`)
       img(src=url_for(theme.avatar.img) onerror=`onerror=null;src='${theme.error_img.flink}'` alt="avatar")
     .sidebar-site-data.site-data.is-center
       a(href=url_for(config.archive_dir) + '/')
