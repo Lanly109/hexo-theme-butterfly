@@ -6,7 +6,7 @@
 'use strict'
 
 hexo.extend.filter.register('before_post_render', function (data) {
-  const imgTestReg = /\.(png|jpe?g|gif|svg|webp)(\?.*)?$/
+  const imgTestReg = /\.(png|jpe?g|gif|svg|webp)(\?.*)?$/i
   let randomCover
   let coverVal = data.cover
 
@@ -24,7 +24,7 @@ hexo.extend.filter.register('before_post_render', function (data) {
     const num = Math.floor(Math.random() * theme.cover.default_cover.length)
     return theme.cover.default_cover[num]
   }
-  
+
   if (coverVal === false) return data
 
   // If cover is not set, use random cover
